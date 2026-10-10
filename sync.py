@@ -25,7 +25,8 @@ KNOWN_GITHUB = {'tp-github', 'azure-infra-cli', 'azure-infra-terraform',
 def api(url, payload=None, method=None):
     headers = {'User-Agent': 'Hajar-Simplon-portfolio'}
     if url.startswith('https://api.github.com/'):
-        headers.update(Authorization='Bearer ' + TOKEN,
+        auth_token = os.environ.get('PROFILE_TOKEN', TOKEN) if url.startswith(f'https://api.github.com/repos/{ORG}/.github/contents/') else TOKEN
+        headers.update(Authorization='Bearer ' + auth_token,
                        Accept='application/vnd.github+json')
     data = None if payload is None else json.dumps(payload).encode()
     if data is not None:
