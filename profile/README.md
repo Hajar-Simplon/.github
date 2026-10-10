@@ -1,59 +1,78 @@
 # Hajar at Simplon
 
-Cloud & DevOps training portfolio — practical projects and the skills they demonstrate.
-
-This organization brings together my Simplon training work. GitLab source repositories are linked below while the GitHub mirrors are being set up.
+Cloud & DevOps training portfolio.
 
 ## Skills and project areas
 
-Azure · AKS · Terraform · Docker Compose · Kubernetes · GitLab CI/CD · Prometheus · Grafana · Velero
+Azure · AKS · Terraform · Bicep · Docker · Kubernetes · CI/CD · Prometheus · Grafana · Velero
+
+GitLab projects are copied to GitHub automatically. Develop in the source repository.
+
+Projects are grouped using repository names, descriptions, and topics.
+
+## CI/CD and delivery
+
+| Project | Description | Source |
+| --- | --- | --- |
+| [kube-microservices-cd](https://github.com/Hajar-Simplon/kube-microservices-cd) |  | [Source](https://gitlab.com/hajarmezouar/kube-microservices-cd) |
+| [tp-github](https://github.com/hajarmezouar/tp-github) | Hands-on GitHub exercises covering repositories, branching, pull requests, Actions, and collaboration workflows — part of the Simplon DevSecOps training curriculum. | [Source](https://github.com/hajarmezouar/tp-github) |
+
+## Capstone projects
+
+| Project | Description | Source |
+| --- | --- | --- |
+| [bilan-azure-backend](https://github.com/hajarmezouar/bilan-azure-backend) | Repo à migrer dans azure pour évaluation de compétences | [Source](https://github.com/hajarmezouar/bilan-azure-backend) |
+| [bilan-azure-frontend](https://github.com/hajarmezouar/bilan-azure-frontend) | Repo à migrer dans azure pour évaluation de compétences | [Source](https://github.com/hajarmezouar/bilan-azure-frontend) |
+| [bilan-azure-terraform](https://github.com/hajarmezouar/bilan-azure-terraform) |  | [Source](https://github.com/hajarmezouar/bilan-azure-terraform) |
+| [bilan-module-07](https://github.com/Hajar-Simplon/bilan-module-07) |  | [Source](https://gitlab.com/hajarmezouar/bilan-module-07) |
 
 ## Containers and orchestration
 
-| Project | Source |
-| --- | --- |
-| kubernetes-nginx | [GitLab](https://gitlab.com/hajarmezouar/kubernetes-nginx) |
-| kube-microservices | [GitLab](https://gitlab.com/hajarmezouar/kube-microservices) |
-| compose-go-mongodb-Hajar | [GitLab](https://gitlab.com/hajarmezouar/compose-go-mongodb-hajar) |
-| kube-operator-manager | [GitLab](https://gitlab.com/hajarmezouar/kube-operator-manager) |
-| aks-azure-files-nfs | [GitLab](https://gitlab.com/hajarmezouar/aks-azure-files-nfs) |
+| Project | Description | Source |
+| --- | --- | --- |
+| [aks-azure-files-nfs](https://github.com/Hajar-Simplon/aks-azure-files-nfs) |  | [Source](https://gitlab.com/hajarmezouar/aks-azure-files-nfs) |
+| [azure-aks-app](https://github.com/Hajar-Simplon/azure-aks-app) |  | [Source](https://gitlab.com/hajarmezouar/azure-aks-app) |
+| [compose-go-mongodb-Hajar](https://github.com/Hajar-Simplon/compose-go-mongodb-hajar) |  | [Source](https://gitlab.com/hajarmezouar/compose-go-mongodb-hajar) |
+| [kube-microservices](https://github.com/Hajar-Simplon/kube-microservices) |  | [Source](https://gitlab.com/hajarmezouar/kube-microservices) |
+| [kube-microservices-aks](https://github.com/Hajar-Simplon/kube-microservices-aks) |  | [Source](https://gitlab.com/hajarmezouar/kube-microservices-aks) |
+| [kube-operator-manager](https://github.com/Hajar-Simplon/kube-operator-manager) |  | [Source](https://gitlab.com/hajarmezouar/kube-operator-manager) |
+| [kubernetes-nginx](https://github.com/Hajar-Simplon/kubernetes-nginx) |  | [Source](https://gitlab.com/hajarmezouar/kubernetes-nginx) |
 
 ## Infrastructure as code
 
-| Project | Source |
-| --- | --- |
-| azure-aks-infra | [GitLab](https://gitlab.com/hajarmezouar/azure-aks-infra) |
-| managed-terraform-state | [GitLab](https://gitlab.com/hajarmezouar/managed-terraform-state) |
+| Project | Description | Source |
+| --- | --- | --- |
+| [azure-aks-infra](https://github.com/Hajar-Simplon/azure-aks-infra) |  | [Source](https://gitlab.com/hajarmezouar/azure-aks-infra) |
+| [azure-infra-cli](https://github.com/hajarmezouar/azure-infra-cli) |  | [Source](https://github.com/hajarmezouar/azure-infra-cli) |
+| [azure-infra-terraform](https://github.com/hajarmezouar/azure-infra-terraform) |  | [Source](https://github.com/hajarmezouar/azure-infra-terraform) |
+| [managed-terraform-state](https://github.com/Hajar-Simplon/managed-terraform-state) |  | [Source](https://gitlab.com/hajarmezouar/managed-terraform-state) |
+| [terraform-azurerm-azure-infra](https://github.com/hajarmezouar/terraform-azurerm-azure-infra) |  | [Source](https://github.com/hajarmezouar/terraform-azurerm-azure-infra) |
+| [TP-Bicep-Azure](https://github.com/hajarmezouar/TP-Bicep-Azure) |  | [Source](https://github.com/hajarmezouar/TP-Bicep-Azure) |
 
-## CI/CD and automated delivery
+## Observability
 
-| Project | Source |
-| --- | --- |
-| kube-microservices-cd | [GitLab](https://gitlab.com/hajarmezouar/kube-microservices-cd) |
-| kube-microservices-aks | [GitLab](https://gitlab.com/hajarmezouar/kube-microservices-aks) |
-| azure-aks-app | [GitLab](https://gitlab.com/hajarmezouar/azure-aks-app) |
-| simplon-22-pyweb-hajar | [GitLab](https://gitlab.com/hajarmezouar/simplon-22-pyweb-hajar) |
+| Project | Description | Source |
+| --- | --- | --- |
+| [azure-observability](https://github.com/hajarmezouar/azure-observability) |  | [Source](https://github.com/hajarmezouar/azure-observability) |
+| [terraform-azure-observability](https://github.com/hajarmezouar/terraform-azure-observability) |  | [Source](https://github.com/hajarmezouar/terraform-azure-observability) |
+| [tp-aks-prometheus-grafana](https://github.com/Hajar-Simplon/tp-aks-prometheus-grafana) |  | [Source](https://gitlab.com/hajarmezouar/tp-aks-prometheus-grafana) |
+| [tp-monitoring-prometheus-grafana](https://github.com/Hajar-Simplon/tp-monitoring-prometheus-grafana) |  | [Source](https://gitlab.com/hajarmezouar/tp-monitoring-prometheus-grafana) |
 
-## Reliability and recovery
+## Other training projects
 
-| Project | Source |
-| --- | --- |
-| kube-microservices-ressources | [GitLab](https://gitlab.com/hajarmezouar/kube-microservices-ressources) |
-| kube-microservices-chaos | [GitLab](https://gitlab.com/hajarmezouar/kube-microservices-chaos) |
-| aks-velero-azure-backup | [GitLab](https://gitlab.com/hajarmezouar/aks-velero-azure-backup) |
-| azure-buckup-files-lab | [GitLab](https://gitlab.com/hajarmezouar/azure-buckup-files-lab) |
+| Project | Description | Source |
+| --- | --- | --- |
+| [simplon-22-pyweb-hajar](https://github.com/Hajar-Simplon/simplon-22-pyweb-hajar) |  | [Source](https://gitlab.com/hajarmezouar/simplon-22-pyweb-hajar) |
 
-## Observability and security
+## Reliability and security
 
-| Project | Source |
-| --- | --- |
-| tp-aks-prometheus-grafana | [GitLab](https://gitlab.com/hajarmezouar/tp-aks-prometheus-grafana) |
-| tp-monitoring-prometheus-grafana | [GitLab](https://gitlab.com/hajarmezouar/tp-monitoring-prometheus-grafana) |
-| aks-security-hardening | [GitLab](https://gitlab.com/hajarmezouar/aks-security-hardening) |
+| Project | Description | Source |
+| --- | --- | --- |
+| [aks-security-hardening](https://github.com/Hajar-Simplon/aks-security-hardening) |  | [Source](https://gitlab.com/hajarmezouar/aks-security-hardening) |
+| [aks-velero-azure-backup](https://github.com/Hajar-Simplon/aks-velero-azure-backup) |  | [Source](https://gitlab.com/hajarmezouar/aks-velero-azure-backup) |
+| [azure-buckup-files-lab](https://github.com/Hajar-Simplon/azure-buckup-files-lab) |  | [Source](https://gitlab.com/hajarmezouar/azure-buckup-files-lab) |
+| [kube-microservices-chaos](https://github.com/Hajar-Simplon/kube-microservices-chaos) |  | [Source](https://gitlab.com/hajarmezouar/kube-microservices-chaos) |
+| [kube-microservices-ressources](https://github.com/Hajar-Simplon/kube-microservices-ressources) |  | [Source](https://gitlab.com/hajarmezouar/kube-microservices-ressources) |
 
-## Module assessment
-
-| Project | Source |
-| --- | --- |
-| bilan-module-07 | [GitLab](https://gitlab.com/hajarmezouar/bilan-module-07) |
-
+---
+Automatically refreshed every six hours. New personal GitHub projects are included when tagged `simplon`. Only public projects are included.
