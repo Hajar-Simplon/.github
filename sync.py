@@ -16,6 +16,37 @@ from urllib.error import HTTPError
 ORG = 'Hajar-Simplon'
 USER = 'hajarmezouar'
 TOKEN = os.environ['PORTFOLIO_TOKEN']
+DESCRIPTIONS = {
+    "kube-operator-manager": "AKS observability with Prometheus Operator, Grafana, cert-manager, HTTPS ingress, and alerts.",
+    "tp-aks-prometheus-grafana": "AKS monitoring with raw Kubernetes manifests, Prometheus, Grafana, Discord alerts, and Flux GitOps.",
+    "tp-monitoring-prometheus-grafana": "Local Linux monitoring with Docker Compose, Prometheus, Node Exporter, Grafana, and Remote Write.",
+    "aks-security-hardening": "AKS security hardening with Entra ID, Azure RBAC, API access restrictions, quotas, and Workload Identity.",
+    "azure-aks-infra": "Terraform infrastructure for AKS, ACR, networking, Key Vault integration, persistent storage, and backups.",
+    "azure-aks-app": "GitOps deployment of PostgreSQL on AKS with Argo CD, Azure Disk persistence, and Key Vault secrets.",
+    "aks-azure-files-nfs": "MongoDB persistence on AKS using private Azure Files NFS storage and dynamic volume provisioning.",
+    "azure-buckup-files-lab": "Azure Files SMB lab demonstrating firewall restrictions, soft delete, backup, and file restoration.",
+    "aks-velero-azure-backup": "Backup and restore AKS resources with Velero, Azure Blob Storage, Terraform, and Workload Identity.",
+    "managed-terraform-state": "Manage an Azure Storage Account with Terraform import, GitLab remote state, versioning, and locking.",
+    "kube-microservices-cd": "Helm deployment of Go microservices to AKS through GitLab CI/CD with immutable image tags and OIDC.",
+    "kube-microservices-aks": "Go API, books, and movies services with Kind development and GitLab CI image builds for Azure ACR.",
+    "kube-microservices-ressources": "Highly available Kubernetes microservices with replicas and pod anti-affinity across simulated zones.",
+    "bilan-module-07": "Containerized Go application and MongoDB with Docker Compose, private networking, secrets, and persistent data.",
+    "kube-microservices-chaos": "Kubernetes microservices resilience lab with replicas and placement across three simulated availability zones.",
+    "kube-microservices": "Deploy Go microservices on Kind with Kubernetes Deployments, Services, replicas, and an API gateway.",
+    "kubernetes-nginx": "Kubernetes fundamentals with Nginx on Kind: Deployments, Services, replicas, logs, and self-healing.",
+    "compose-go-mongodb-hajar": "Docker Compose training project connecting a Go web application to MongoDB.",
+    "simplon-22-pyweb-hajar": "Containerized Flask web app with HTTP access logging and a log viewer endpoint.",
+    "tp-github": "GitHub Actions training covering CI/CD workflows, linting, tests, Azure deployment, and repository automation.",
+    "azure-infra-cli": "Automate Azure compute, storage, and networking resources with Azure CLI, PowerShell, Bash, and GitHub Actions.",
+    "azure-infra-terraform": "Modular Azure infrastructure with Terraform, Blob Storage remote state, and GitHub Actions OIDC deployment.",
+    "terraform-azurerm-azure-infra": "Reusable Terraform module for Azure networking, storage, App Service, Functions, and Container Instances.",
+    "azure-observability": "Modular Terraform foundation for an Azure application platform and Azure Monitor observability labs.",
+    "terraform-azure-observability": "Terraform Azure observability stack with Monitor, Application Insights, Log Analytics, Prometheus, and Grafana.",
+    "bilan-azure-frontend": "Angular certification quiz frontend served by Nginx on Azure Web App with automated container delivery.",
+    "bilan-azure-backend": "Spring Boot REST API for certification quizzes, questions, sessions, and results, deployed on Azure Web App.",
+    "bilan-azure-terraform": "Terraform infrastructure and CI/CD for Azure Quiz, including managed services and an Azure self-hosted runner.",
+    "tp-bicep-azure": "Azure compute labs with Bicep: Linux VMs, networking, VM Scale Sets, autoscaling, and App Service slots."
+}
 KNOWN_GITHUB = {'tp-github', 'azure-infra-cli', 'azure-infra-terraform',
                 'terraform-azurerm-azure-infra', 'azure-observability',
                 'terraform-azure-observability', 'bilan-azure-frontend',
@@ -104,7 +135,7 @@ def main():
                     existing[name] = api(f'https://api.github.com/orgs/{ORG}/repos',
                                          {'name': name, 'description': marker, 'private': False,
                                           'auto_init': False})
-                if existing[name].get('description') not in (marker, marker.replace('GitLab source:', 'GitLab mirror source:')):
+                if not existing[name].get('description') or existing[name].get('description') not in (marker, marker.replace('GitLab source:', 'GitLab mirror source:'), DESCRIPTIONS.get(name)):
                     raise RuntimeError('Destination name collision; repository left untouched')
                 if p.get('default_branch'):
                     checkout = root / name
@@ -125,6 +156,7 @@ def main():
                 projects.append(dict(p, portfolio_url=p['html_url'], source_url=p['html_url']))
     sections = {}
     for p in projects:
+        p['description'] = DESCRIPTIONS.get(p['name'].lower(), p.get('description') or '')
         sections.setdefault(category(p), []).append(p)
     text = '# Hajar at Simplon\n\nCloud & DevOps training portfolio.\n\n'
     text += '## Skills and project areas\n\nAzure · AKS · Terraform · Bicep · Docker · Kubernetes · CI/CD · Prometheus · Grafana · Velero\n\n'
