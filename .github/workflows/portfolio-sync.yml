@@ -8,7 +8,7 @@ on:
       - sync.py
       - .github/workflows/portfolio-sync.yml
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: portfolio-sync
   cancel-in-progress: false
@@ -25,4 +25,5 @@ jobs:
       - name: Discover, synchronize and categorize public projects
         env:
           PORTFOLIO_TOKEN: ${{ secrets.PORTFOLIO_TOKEN }}
+          PROFILE_TOKEN: ${{ github.token }}
         run: python sync.py
